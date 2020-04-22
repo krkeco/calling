@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-family: 'Acme';
+  font-size: 32px;
+  font-weight: 200;
+  margin-bottom: 40px;
+}
+.textMedium{
+  font-family: 'Acme';
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 20px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flexRow {
+  display: flex;
+  flex-direction: row;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flexCol {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+.center {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+.spaceAround {
+  width:100%;
+  justify-content: space-around;
+  align-items: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+  -webkit-transition: background-color 1.5s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 1.5s;
+  text-align: center;
+  /*background-color: #F5FFFA;*/
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.menu {
+  align-self: left;
+  -webkit-transition: background-color 1.5s; /* For Safari 3.1 to 6.0 */
+  transition: background-color 1.5s;
+}
+.blockText {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 18px;
+  line-height: 27px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.breaker{
+  height:100px;
+  width:1px;
+}
+.padded{
+  padding-top: 300px;
+  padding-bottom: 300px;
+}
+.container {
+  width: 100%;
+}
+
+.contactIcon{
+  margin: 20px;
+  color:teal;
+}
+.clickable:hover{
+  opacity:0.5;
+  -webkit-transition: opacity 0.25s; /* For Safari 3.1 to 6.0 */
+  transition: opacity 0.25s;
+
+}
+.contactContainer{
+  background-color:#ddd;
+  width:100%;
+
 }
