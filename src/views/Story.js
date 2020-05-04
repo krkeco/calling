@@ -2,24 +2,21 @@ import React from 'react';
 import '../App.css';
 
 function App(props) {
+  // let story = "hidden";
+
   return (
     <div
-      className="story container padded"
       style={{
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
+        backgroundImage: `url("${props.character}")`,
+        backgroundSize: 'cover',
+        width: '100%',
+        height: '600px',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="title">{props.name}</div>
-
-      <img style={{ width: '80%' }} src={props.loc} />
-      <div className="flexRow center">
+      <div style={{ width: '50%', paddingTop: '100px' }}>
+        <div className="title">{props.name}</div>
         <p>the story of {props.name}</p>
-        <img
-          style={{ width: 'auto', maxHeight: '300px' }}
-          src={props.character}
-        />
       </div>
     </div>
   );

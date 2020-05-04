@@ -1,6 +1,7 @@
+
 @font-face {
-  font-family: 'Acme';
-  src: local('Acme'), url(./fonts/Acme-Regular.ttf) format('truetype');
+  font-family: 'Luminari';
+  src: local('Luminari'), url(./fonts/Luminari-Regular.ttf) format('truetype');
 }
 
 body {

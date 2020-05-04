@@ -8,7 +8,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { MenuOpen } from '@material-ui/icons';
 
-
 const App = (props) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -44,15 +43,15 @@ const App = (props) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => handleClose(props.divRefs.promoRef)}>
+        <MenuItem onClick={() => handleClose(props.divRef.promo)}>
           The Calling
         </MenuItem>
-        <MenuItem onClick={() => handleClose(props.divRef.jonah)}>Jonah</MenuItem>
-        <MenuItem onClick={() => handleClose(props.divRef.esther)}>Esther</MenuItem>
-        <MenuItem onClick={() => handleClose(props.divRef.joshua)}>Joshua</MenuItem>
-        <MenuItem onClick={() => handleClose(props.divRef.paul)}>Paul</MenuItem>
-        <MenuItem onClick={() => handleClose(props.divRef.about)}>Purpose</MenuItem>
-        <MenuItem onClick={() => handleClose(props.divRef.bio)}>About</MenuItem>
+        <MenuItem onClick={() => handleClose(props.divRef.about)}>
+          The Characters
+        </MenuItem>
+        <MenuItem onClick={() => props.handleOpen()}>
+          About Us
+        </MenuItem>
       </Menu>
     </div>
   );

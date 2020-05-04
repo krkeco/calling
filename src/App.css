@@ -1,19 +1,26 @@
 html {
   scroll-behavior: smooth;
+  font-family: 'Times New Roman';
 }
+p{
 
+  font-family: 'Times New Roman';
+}
 .title {
-  font-family: 'Acme';
+  font-family: 'Luminari';
   font-size: 32px;
   font-weight: 200;
   margin-bottom: 40px;
 }
 .textMedium{
-  font-family: 'Acme';
+  font-family: 'Luminari';
   font-size: 24px;
   font-weight: 200;
   margin-bottom: 20px;
 
+}
+.heavyFont{
+  font-weight:800;
 }
 
 .flexRow {
@@ -33,19 +40,21 @@ html {
   justify-content: space-around;
   align-items: space-around;
 }
-
+.appBg{
+  background-color:#ed9;
+}
 .app {
-  -webkit-transition: background-color 1.5s; /* For Safari 3.1 to 6.0 */
-  transition: background-color 1.5s;
+  /*-webkit-transition: background-color 1.5s;
+  transition: background-color 1.5s;*/
   text-align: center;
-  /*background-color: #F5FFFA;*/
+  
   height: 100%;
   width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  padding-top: 20px;
+  
 }
 .menu {
   align-self: left;
@@ -64,8 +73,8 @@ html {
   width:1px;
 }
 .padded{
-  padding-top: 300px;
-  padding-bottom: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .container {
   width: 100%;
@@ -73,16 +82,28 @@ html {
 
 .contactIcon{
   margin: 20px;
-  color:teal;
+  color:white;
 }
 .clickable:hover{
   opacity:0.5;
-  -webkit-transition: opacity 0.25s; /* For Safari 3.1 to 6.0 */
-  transition: opacity 0.25s;
+  -webkit-transition: opacity 0.15s; /* For Safari 3.1 to 6.0 */
+  transition: opacity 0.15s;
 
 }
 .contactContainer{
   background-color:#ddd;
   width:100%;
 
+}
+.hidden{
+  visibility:hidden;
+  height:0px;
+  opacity:0;
+  transition: height .25s, opacity .25s;
+}
+.shown {
+  visibility:visible;
+  height:auto;
+  opacity:1;
+  transition: height .25s, opacity .25s;
 }

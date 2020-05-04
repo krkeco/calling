@@ -2,6 +2,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Modal from '@material-ui/core/Modal';
+import { Container, Col, Row, Button, Carousel } from 'react-bootstrap';
+
 import Menu from './views/Menu';
 import About from './views/About';
 import Bio from './views/Bio';
@@ -11,94 +14,107 @@ import Story from './views/Story';
 
 import babylon from './imgs/babylon/location.png';
 import xerxes from './imgs/babylon/xerxes.png';
-import esther from './imgs/babylon/esther2.png';
+
+import esther from './imgs/stories/Esther.png';
+import jonah from './imgs/stories/Jonah.png';
+import joshua from './imgs/stories/Joshua.png';
 
 import saul from './imgs/saul.png';
 import abigail from './imgs/abigail.png';
-import david from './imgs/david.png';
 import joab from './imgs/joab.png';
-import samuel from './imgs/samuel.png';
 import agag from './imgs/agag.png';
 
+import influence from './imgs/influence.png';
+import gold from './imgs/gold.png';
 
 const scrollToRef = (ref) => {
-  window.scrollTo(0, ref.current.offsetTop + 200);
+  if(ref && ref.current){
+    window.scrollTo(0, ref.current.offsetTop);
+  }
 };
 
 function App() {
-  const [offset, setOffset] = useState(0);
-  const [backgroundColor, setBackground] = useState(0);
-  // const isScrolling = useRef(0);
 
-  useEffect(() => {
-    let isScrolling;
+  const [open, setOpen] = React.useState(false);
 
-    window.onscroll = () => {
-      setOffset(window.pageYOffset);
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
-      window.clearTimeout(isScrolling);
-      isScrolling = setTimeout(function () {
-        // Run the callback
-        console.log('Scrolling has stopped.');
-        // + window.innerHeight
-        if (window.pageYOffset > divRef.about.current.offsetTop - 300) {
-          setBackground('#F5FFFA');
-        } else if (window.pageYOffset > divRef.paul.current.offsetTop) {
-          setBackground('#e99'); //CD5C5C
-        } else if (window.pageYOffset > divRef.joshua.current.offsetTop) {
-          setBackground('#ff9'); //ff8
-        } else if (window.pageYOffset > divRef.esther.current.offsetTop) {
-          setBackground('#75a6fe'); //6495ED
-        } else if (window.pageYOffset > divRef.jonah.current.offsetTop) {
-          setBackground('#ccefff'); //8cd
-        } else {
-          setBackground('#F5FFFA');
-        }
-      }, 66);
-    };
-  }, []);
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-  console.log(offset);
   const divRef = {
     about: useRef(null),
     promo: useRef(null),
     bio: useRef(null),
     contact: useRef(null),
-    jonah: useRef(null),
-    esther: useRef(null),
-    joshua: useRef(null),
-    paul: useRef(null),
-  }
+  };
 
   return (
-    <div className="app" style={{ backgroundColor: backgroundColor }}>
-      <Menu
-        scrollToRef={scrollToRef}
-        bgColor={backgroundColor}
-        divRef={divRef}
-      />
-      <div style={{ margin: '70px' }}>
-        <div ref={divRef.promo}></div>
-        <Promo 
-          divRef={divRef}
-          scrollToRef={scrollToRef}
-        />
-        <div ref={divRef.jonah}></div>
-        <Story name="Jonah" loc={babylon} character={samuel} />
-        <div ref={divRef.esther}></div>
-        <Story name="Esther" loc={babylon} character={esther} />
-        <div ref={divRef.joshua}></div>
-        <Story name="Joshua" loc={babylon} character={david} />
-        <div ref={divRef.paul}></div>
-        <Story name="Paul" loc={babylon} character={saul} />
+    <div className="app">
+      <Menu handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
+      <div>
+        <Promo divRef={divRef} scrollToRef={scrollToRef} />
+        <span ref={divRef.promo}></span>
 
-        <div ref={divRef.about}></div>
         <About />
-        <div ref={divRef.bio}></div>
-        <Bio />
-        <div ref={divRef.contact}></div>
+        <div ref={divRef.about}></div>
+
+        <Carousel>
+          <Carousel.Item>
+            <Story name="Jonah" loc={babylon} character={jonah} />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Story name="Esther" loc={babylon} character={esther} />
+          </Carousel.Item>
+          <Carousel.Item>
+            <Story name="Joshua" loc={babylon} character={joshua} />
+          </Carousel.Item>
+          {/** 
+        <Carousel.Item>
+          <Story offset={storyHide[3]} name="Paul" loc={babylon} character={saul} />
+        </Carousel.Item>
+        **/}
+        </Carousel>
+
+        <div className="preOrder padded appBg flexRow">
+          <div className="flexCol" style={{ flex: 1, paddingLeft: '200px', paddingRight: '200px' }}>
+            <p className="title">Pre order</p>
+            <p  >
+              Join the Waitlist. As we get working on releaseing both our
+              starter and standard / full kit of “The Call - ings,” you can get
+              in line for your very own set. Any qyestions? Contact us today.
+            </p>
+            <Contact/>
+          </div>
+          <div className="flexCol" style={{ flex: 1 }}>
+            <div className="flexRow">
+              <div className="flexCol" style={{ flex: 1 }}>
+                <img
+                  style={{ width: '200px', height: '200px' }}
+                  src={influence}
+                />
+              </div>
+              <div className="flexCol" style={{ flex: 1 }}>
+                <img style={{ width: '200px', height: '200px' }} src={gold} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <span ref={divRef.contact}></span>
+
+<Modal
+  open={open}
+  onClose={handleClose}
+  aria-labelledby="simple-modal-title"
+  aria-describedby="simple-modal-description"
+>
+  <Bio />
+</Modal>
+        {/**<span ref={divRef.bio}></span>**/}
       </div>
-      <Contact />
     </div>
   );
 }

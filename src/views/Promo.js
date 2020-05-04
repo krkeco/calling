@@ -4,7 +4,7 @@ import '../App.css';
 import BR from './BR.js';
 
 import logo from '../logo.svg';
-import babylon from '../imgs/babylon/location.png';
+import splash from '../imgs/splash.png';
 
 import saul from '../imgs/saul.png';
 import abigail from '../imgs/abigail.png';
@@ -16,18 +16,23 @@ import esther from '../imgs/babylon/esther.png';
 
 function App(props) {
   return (
-    <div
-      className="promo container"
-      style={{
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-      }}
-    >
-      <div className="title">THE CALLING</div>
+    <div>
+      <div
+        style={{
+          fontFamily: 'Luminari',
+          fontSize: '64px',
+          fontWeight: 200,
+          position: 'absolute',
+          top: 150,
+          textAlign: 'center',
+          width: '100%',
+        }}
+      >
+        THE CALLING
+      </div>
+      <img style={{ width: '100%', margin: 0, padding: 0 }} src={splash} />
 
-      <img style={{ width: '80%' }} src={babylon} />
-      <p className="blockText">
+      {/**  <p className="blockText">
         The Calling is a deck building game based around the Bible.
         It is not a retelling but a fun ‘reliving’ of Bible characters and their stories.
         Characters will interact with each other in a world of callings and banes- 
@@ -68,6 +73,7 @@ function App(props) {
       <div className="title">video</div>
       <BR />
       <div>different game box sizes (duel set, 4 player, big set)</div>
+    **/}
     </div>
   );
 }

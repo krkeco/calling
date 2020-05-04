@@ -1,32 +1,37 @@
 import React from 'react';
 import '../App.css';
-
-import splash from '../imgs/splash.png';
+import Contact from './Contact';
+import Grid from '@material-ui/core/Grid';
+import splash from '../imgs/trifecta.png';
 
 function App() {
+  // <div className="appBg" style={{ height: '90vh', paddingTop:'50px' }}>
   return (
-    <div className="About container padded">
-      <div className="title"> About The Calling </div>
-      <div style={{ display: 'flex', height: '500px', flexDirection: 'row' }}>
-        <img style={{ height: '350px' }} src={splash} />
-        <div style={{ margin: '10px' }}>
-          <p className="blockText" >
-            I want a game that reminds me of the Bible and the sagas epics and
-            adventures that we have there A lot of times when I think of the
-            Bible it comes off as stale or old or dated... But it isn't it's
-            really interesting I have always wanted to give my creativity to God
-            and make something that I really enjoy (games, and making things)
-            and give it to him This may not be the best game ever (ie dominion
-            2.0 ) but it is fun, simple and illicits your imagination to what
-            the Bible would be like in a fantasy setting We believe in the
-            inerrant truth of the Bible and that it is the God inspired word (of
-            God) We want to remind ourselves and those who play that it can be
-            fun to learn about and think about the Bible and the callings of
-            those who are in it
-          </p>
-        </div>
-      </div>
-    </div>
+    <Grid
+      container
+      className="appBg padded"
+      style={{ width: '100%', margin: 0 }}
+      spacing={2}
+    >
+      <Grid item xs={12} md={6}>
+        <img style={{ height: '50vh' }} src={splash} />
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <div className="title">The Game</div>
+
+        <p className="blockText">
+          The Calling is a deck building game based around the Bible. It is not
+          a retelling but a fun ‘reliving’ of Bible characters and their
+          stories. Characters will interact with each other in a world of
+          callings and banes- trying to achieve their calling, garner the most
+          influence, or be the last character to succumb to their bane. It is
+          definitely a game that focuses on the core ideas in a story and not
+          the nitty gritty details (though we do try to keep it Bible accurate)
+        </p>
+
+        <Contact />
+      </Grid>
+    </Grid>
   );
 }
 

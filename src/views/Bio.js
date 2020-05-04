@@ -1,33 +1,58 @@
 import React from 'react';
 import '../App.css';
+import Contact from './Contact';
 
-import xerxes from '../imgs/babylon/xerxes.png';
+import xerxes from '../imgs/gold.png';
+import background from '../imgs/biobg.png';
 
 function App() {
   return (
-    <div className="container flexCol center">
-      <p>Here's a little bit about us! </p>
-      <div className="flexRow spaceAround">
-      <div style={{width:'30%'}} >
-      <img style={{ width: '60%' }} src={xerxes} />
-      <p>KC </p>
-      <p>Software Developer who loves playing games and reading about the magic of the world (ie Tolkein, MacDonald, Chesterton, Lewis).  
-      Has always had a heart to express this in a format that can inspire the world and pull people closer to the Word
-      </p>
+    <div className="flexRow appBg" style={{ paddingTop: '50px' }}>
+      <div style={{ flex: 1 }} className="flexCol">
+        <p className="title">Background Story</p>
+        <p>
+          I want a game that reminds me of the Bible and the sagas epics and
+          adventures that we have there A lot of times when I think of the Bible
+          it comes off as stale or old or dated... But it isn't it's really
+          interesting I have always wanted to give my creativity to God and make
+          something that I really enjoy (games, and making things) and give it
+          to him This may not be the best game ever (ie dominion 2.0 ) but it is
+          fun, simple and illicits your imagination to what the Bible would be
+          like in a fantasy setting We believe in the inerrant truth of the
+          Bible and that it is the God inspired word (of God) We want to remind
+          ourselves and those who play that it can be fun to learn about and
+          think about the Bible and the callings of those who are in it
+        </p>
+        <Contact />
       </div>
-      <div style={{width:'30%'}} >
-      <img style={{ width: '60%' }} src={xerxes} />
-      <p>DB</p>
-      <p>Artist who has spent years following his heart and imagination.
-      ALways looking to push the envelop and try something different.</p>
-      </div>
-      <div style={{width:'30%'}} >
-      <img style={{ width: '60%' }} src={xerxes} />
-      <p>HN</p>
-      <p>
-      Graphic Designer with a MA in Theology, mostly along for the ride with KC :P
-      </p>
-      </div>
+      <div style={{ flex: 1 }} className="flexCol">
+        <div className="flexRow">
+          <div className="flexCol">
+            <img style={{ width: '100px', height: '100px' }} src={xerxes} />
+          </div>
+          <div className="flexCol" style={{ textAlign: 'left' }}>
+            <span className="heavyFont">KC</span>
+            <p>Game Design</p>
+          </div>
+        </div>
+        <div className="flexRow">
+          <div className="flexCol">
+            <img style={{ width: '100px', height: '100px' }} src={xerxes} />
+          </div>
+          <div className="flexCol" style={{ textAlign: 'left' }}>
+            <span className="heavyFont">DB</span>
+            <p>The Art</p>
+          </div>
+        </div>
+        <div className="flexRow">
+          <div className="flexCol">
+            <img style={{ width: '100px', height: '100px' }} src={xerxes} />
+          </div>
+          <div className="flexCol" style={{ textAlign: 'left' }}>
+            <span className="heavyFont">Hannah</span>
+            <p>Graphic Design and Marketing</p>
+          </div>
+        </div>
       </div>
     </div>
   );
