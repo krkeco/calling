@@ -11,6 +11,7 @@ import Bio from './views/Bio';
 import Promo from './views/Promo';
 import Contact from './views/Contact';
 import Story from './views/Story';
+import Indiegogo from './views/Indiegogo';
 
 import babylon from './imgs/babylon/location.png';
 import xerxes from './imgs/babylon/xerxes.png';
@@ -24,8 +25,6 @@ import abigail from './imgs/abigail.png';
 import joab from './imgs/joab.png';
 import agag from './imgs/agag.png';
 
-import influence from './imgs/influence.png';
-import gold from './imgs/gold.png';
 
 const scrollToRef = (ref) => {
   if(ref && ref.current){
@@ -79,30 +78,7 @@ function App() {
         **/}
         </Carousel>
 
-        <div className="preOrder padded appBg flexRow">
-          <div className="flexCol" style={{ flex: 1, paddingLeft: '200px', paddingRight: '200px' }}>
-            <p className="title">Pre order</p>
-            <p  >
-              Join the Waitlist. As we get working on releaseing both our
-              starter and standard / full kit of “The Call - ings,” you can get
-              in line for your very own set. Any qyestions? Contact us today.
-            </p>
-            <Contact/>
-          </div>
-          <div className="flexCol" style={{ flex: 1 }}>
-            <div className="flexRow">
-              <div className="flexCol" style={{ flex: 1 }}>
-                <img
-                  style={{ width: '200px', height: '200px' }}
-                  src={influence}
-                />
-              </div>
-              <div className="flexCol" style={{ flex: 1 }}>
-                <img style={{ width: '200px', height: '200px' }} src={gold} />
-              </div>
-            </div>
-          </div>
-        </div>
+        <Indiegogo/>
         <span ref={divRef.contact}></span>
 
 <Modal

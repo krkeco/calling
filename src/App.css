@@ -107,3 +107,36 @@ p{
   opacity:1;
   transition: height .25s, opacity .25s;
 }
+.waxBtn{
+  user-select: none;
+  text-decoration: none;
+  transition: text-shadow .5s;
+}
+.waxBtn:hover{
+  text-decoration: none;
+  text-shadow: -2px -1px #555;
+  transition: text-shadow .5s;
+}
+.waxBtn:hover .waxText{
+  margin-top: -116px;
+  transition: margin-top .5s;
+}
+
+.waxBtn:hover .waxGoldText{
+  margin-top: -116px;
+  transition: margin-top .5s;
+}
+.waxText{
+  font-family: 'Luminari';
+  margin-top:-115px;
+  margin-left:15px;
+  color:white;
+  transition: margin-top .5s;
+}
+.waxGoldText{
+  font-family: 'Luminari';
+  margin-top:-115px;
+  margin-left:3px;
+  color:white;
+  transition: margin-top .5s;
+}
