@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="flexRow appBg" style={{ paddingTop: '50px' }}>
       <div style={{ flex: 1 }} className="flexCol">
-        <p className="title">Background Story</p>
+        <p className="title  textShadow">Background Story</p>
         <p>
           I want a game that reminds me of the Bible and the sagas epics and
           adventures that we have there A lot of times when I think of the Bible

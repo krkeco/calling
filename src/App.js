@@ -13,12 +13,18 @@ import Contact from './views/Contact';
 import Story from './views/Story';
 import Indiegogo from './views/Indiegogo';
 
-import babylon from './imgs/babylon/location.png';
+
 import xerxes from './imgs/babylon/xerxes.png';
 
-import esther from './imgs/stories/Esther.png';
-import jonah from './imgs/stories/Jonah.png';
-import joshua from './imgs/stories/Joshua.png';
+import babylon from './imgs/babylon/location.png';
+
+import storybabylon from './imgs/stories/storybg2.png';
+import storynineveh from './imgs/stories/storybg.png';
+import storycanaan from './imgs/stories/storybg3.png';
+
+import esther from './imgs/stories/storyEsther.png';
+import jonah from './imgs/stories/storyJonah.png';
+import joshua from './imgs/stories/storyJoshua.png';
 
 import saul from './imgs/saul.png';
 import abigail from './imgs/abigail.png';
@@ -54,22 +60,22 @@ function App() {
   return (
     <div className="app">
       <Menu handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
-      <div>
+      
         <Promo divRef={divRef} scrollToRef={scrollToRef} />
         <span ref={divRef.promo}></span>
 
         <About />
         <div ref={divRef.about}></div>
 
-        <Carousel>
+        <Carousel style={{width:'100%'}} >
           <Carousel.Item>
-            <Story name="Jonah" loc={babylon} character={jonah} />
+            <Story name="Jonah" loc={storynineveh} character={jonah} />
           </Carousel.Item>
           <Carousel.Item>
-            <Story name="Esther" loc={babylon} character={esther} />
+            <Story name="Esther" loc={storybabylon} character={esther} />
           </Carousel.Item>
           <Carousel.Item>
-            <Story name="Joshua" loc={babylon} character={joshua} />
+            <Story name="Joshua" loc={storycanaan} character={joshua} />
           </Carousel.Item>
           {/** 
         <Carousel.Item>
@@ -90,7 +96,7 @@ function App() {
   <Bio />
 </Modal>
         {/**<span ref={divRef.bio}></span>**/}
-      </div>
+      
     </div>
   );
 }

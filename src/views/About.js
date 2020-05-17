@@ -10,14 +10,14 @@ function App() {
     <Grid
       container
       className="appBg padded"
-      style={{ width: '100%', margin: 0 }}
+      style={{ width: '100%', margin: 0, padding: 50}}
       spacing={2}
     >
-      <Grid item xs={12} md={6}>
-        <img style={{ height: '50vh' }} src={splash} />
+      <Grid  className="aboutImg" item xs={12} md={6}>
+        <img height="100%" src={splash} />
       </Grid>
-      <Grid item xs={12} md={6}>
-        <div className="title">The Game</div>
+      <Grid item xs={12} md={6} >
+        <div className="title  textShadow">The Game</div>
 
         <p className="blockText">
           The Calling is a deck building game based around the Bible. It is not

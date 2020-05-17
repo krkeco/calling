@@ -18,19 +18,12 @@ function App(props) {
   return (
     <div>
       <div
-        style={{
-          fontFamily: 'Luminari',
-          fontSize: '64px',
-          fontWeight: 200,
-          position: 'absolute',
-          top: 150,
-          textAlign: 'center',
-          width: '100%',
-        }}
+        className="promoTitle textShadow"
       >
         THE CALLING
       </div>
-      <img style={{ width: '100%', margin: 0, padding: 0 }} src={splash} />
+        <img style={{width:'100vw',padding:0,margin:0}} src={splash} />
+      
 
       {/**  <p className="blockText">
         The Calling is a deck building game based around the Bible.

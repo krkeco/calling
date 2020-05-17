@@ -23,12 +23,13 @@ const App = (props) => {
     <div
       className="menu"
       style={{
-        backgroundColor: props.bgColor,
         position: 'fixed',
+        width:'100%',
         top: 0,
         left: 0,
       }}
     >
+        <div className="mobileMenu">
       <Button
         aria-controls="simple-menu"
         aria-haspopup="true"
@@ -36,6 +37,20 @@ const App = (props) => {
       >
         <MenuOpen />
       </Button>
+      </div>
+      <div
+       className="webMenu">
+        <Button onClick={() => handleClose(props.divRef.promo)}>
+          <p  className="textMenu textShadow">The Calling</p>
+        </Button>
+        <Button onClick={() => handleClose(props.divRef.about)}>
+          <p  className="textMenu textShadow">The Characters</p>
+        </Button>
+        <Button onClick={() => props.handleOpen()}>
+          <p  className="textMenu textShadow">About Us</p>
+        </Button>
+      </div>
+
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
