@@ -2,22 +2,23 @@ import React from 'react';
 import '../App.css';
 import Contact from './Contact';
 
+import Grid from '@material-ui/core/Grid';
 import xerxes from '../imgs/gold.png';
 import background from '../imgs/bg/bio.png';
 
 function App() {
   return (
-    <div className="flexRow" 
+    <div className="flexRow bioWrap" 
       style={{
         backgroundImage: `url("${background}")`,
         backgroundSize: 'cover',
         width: '100%',
         height: '100%',
-        paddingTop:'170px',
         backgroundRepeat: 'no-repeat',
       }}>
-      <div style={{ flex: 1 }} className="flexCol">
-        <p className="title  textShadow" style={{marginBottom:5}} >Background Story</p>
+      <Grid container className="bioScroller" style={{marginBottom:20}} >
+      <Grid xs={12}>  <p className="bioTitle  textShadow" style={{marginBottom:5}} >Background Story</p></Grid>
+      <Grid xs={12} md={8} className="flexCol" style={{padding:20}} >
         <p>
           I want a game that reminds me of the Bible and the sagas epics and
           adventures that we have there A lot of times when I think of the Bible
@@ -32,8 +33,8 @@ function App() {
           think about the Bible and the callings of those who are in it
         </p>
         <Contact />
-      </div>
-      <div style={{ flex: 1 }} className="flexCol">
+      </Grid>
+      <Grid xs={12} md={4} className="flexCol" >
         <div className="flexRow">
           <div className="flexCol">
             <img style={{ width: '100px', height: '100px' }} src={xerxes} />
@@ -61,7 +62,9 @@ function App() {
             <p>Graphic Design and Marketing</p>
           </div>
         </div>
-      </div>
+      </Grid>
+
+    </Grid>
     </div>
   );
 }
