@@ -31,23 +31,28 @@ import abigail from './imgs/abigail.png';
 import joab from './imgs/joab.png';
 import agag from './imgs/agag.png';
 
+import backgroundStory from './imgs/bg/mid.png'
 
 const scrollToRef = (ref) => {
   if(ref && ref.current){
-    window.scrollTo(0, ref.current.offsetTop);
+    window.scrollTo(0, ref.current.offsetTop-50);
   }
 };
 
 function App() {
 
   const [open, setOpen] = React.useState(false);
+  const [bioContainer, setBioContainer] = useState("");
 
   const handleOpen = () => {
-    setOpen(true);
+    setOpen(!open);
+    window.scrollTo(0, 0);
+    // setBioContainer("bioContainer")
   };
 
   const handleClose = () => {
-    setOpen(false);
+    // setOpen(false);
+    // setBioContainer("")
   };
 
   const divRef = {
@@ -67,34 +72,46 @@ function App() {
         <About />
         <div ref={divRef.about}></div>
 
-        <Carousel style={{width:'100%'}} >
-          <Carousel.Item>
+   
+        <div style={{
+          backgroundImage: `url("${backgroundStory}")`,
+          backgroundSize: 'cover',
+          width: '100%',
+          backgroundRepeat: 'no-repeat',
+        }} 
+        className="gogoBg" >
+        <Carousel  
+        style={{height:'100%',width:'100%'}}
+        >
+          <Carousel.Item style={{height:'100%'}} >
             <Story name="Jonah" loc={storynineveh} character={jonah} />
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item style={{height:'100%'}}>
             <Story name="Esther" loc={storybabylon} character={esther} />
           </Carousel.Item>
-          <Carousel.Item>
+          <Carousel.Item style={{height:'100%'}}>
             <Story name="Joshua" loc={storycanaan} character={joshua} />
           </Carousel.Item>
           {/** 
-        <Carousel.Item>
+        <Carousel.Item style={{height:'100%'}}>
           <Story offset={storyHide[3]} name="Paul" loc={babylon} character={saul} />
         </Carousel.Item>
         **/}
         </Carousel>
+        </div>
 
         <Indiegogo/>
         <span ref={divRef.contact}></span>
 
-<Modal
-  open={open}
-  onClose={handleClose}
+<div
+   className={`bioContainer ${open ? 'active': ''}`}
+  
+  onClick={handleOpen}
   aria-labelledby="simple-modal-title"
   aria-describedby="simple-modal-description"
 >
   <Bio />
-</Modal>
+</div>
         {/**<span ref={divRef.bio}></span>**/}
       
     </div>

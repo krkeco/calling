@@ -3,18 +3,27 @@ import '../App.css';
 import Contact from './Contact';
 import Grid from '@material-ui/core/Grid';
 import splash from '../imgs/trifecta.png';
+import bgImg from '../imgs/bg/mid.png'
 
 function App() {
   // <div className="appBg" style={{ height: '90vh', paddingTop:'50px' }}>
   return (
+        <div style={{
+        backgroundImage: `url("${bgImg}")`,
+        backgroundSize: 'cover',
+        width: '100%',
+        height: 'auto',
+        margin:'-5px',
+        backgroundRepeat: 'no-repeat',
+      }}>
     <Grid
       container
-      className="appBg padded"
+      className="padded"
       style={{ width: '100%', margin: 0, padding: 50}}
       spacing={2}
     >
-      <Grid  className="aboutImg" item xs={12} md={6}>
-        <img height="100%" src={splash} />
+      <Grid   style={{width:'100%'}} item xs={12} md={6}>
+        <img className="aboutImg"  src={splash} />
       </Grid>
       <Grid item xs={12} md={6} >
         <div className="title  textShadow">The Game</div>
@@ -32,6 +41,7 @@ function App() {
         <Contact />
       </Grid>
     </Grid>
+    </div>
   );
 }
 

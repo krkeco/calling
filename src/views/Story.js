@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 
+import Grid from '@material-ui/core/Grid';
+
 function App(props) {
   // let story = "hidden";
 
@@ -11,23 +13,36 @@ function App(props) {
     //   <div style={{ width: '50%' }}>
     //   </div>
     // </div>
-  return (<div className="flexRow" style={{height: 400,alignItems:'flex-end', width:'100%'}} >
-    <div className="flexCol"
-      style={{
-        backgroundImage: `url("${props.loc}")`,
-        backgroundSize: 'cover',
-        width: '100%',
-        height: '400px',
-        backgroundRepeat: 'no-repeat',
-      }}>
-        <div className="title  textShadow">{props.name}</div>
-        <p>the story of {props.name}</p>
+  return (
+    
+       <Grid 
+       container
+        spacing={2}
+      >
+        <Grid item xs={12} md={7}
+        style={{padding:0}}
+         className="flexCol center paddless">
+         <div className="storyLoc "
+          style={{
+            backgroundImage: `url("${props.loc}")`,
+            backgroundSize: 'cover',
+            height:'400px',
+            padding:0,
+            backgroundRepeat: 'no-repeat',
+          }}>
+          <div className="title  textShadow">{props.name}</div>
+          <p>the story of {props.name}</p>
+        </div>
       
-    </div>
-    <div style={{width:'400px', alignItems:'flex-end'}} className="flexCol">
-      <img src={props.character} height="400px" width="400px" />
-    </div>
-    </div>
+      </Grid>
+      <Grid item xs={12} md={5}
+          style={{padding:0}}
+         className="flexCol storyImg">
+        
+        <img src={props.character} height="400px" width="400px" />
+      
+      </Grid>
+    </Grid>
   );
 }
 

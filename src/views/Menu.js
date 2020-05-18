@@ -31,6 +31,7 @@ const App = (props) => {
     >
         <div className="mobileMenu">
       <Button
+        style={{color:'white'}}
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
@@ -39,16 +40,22 @@ const App = (props) => {
       </Button>
       </div>
       <div
-       className="webMenu">
+       className="webMenu flexRow spaceBetween">
+       <div className="flexRow">
         <Button onClick={() => handleClose(props.divRef.promo)}>
-          <p  className="textMenu textShadow">The Calling</p>
+          <p  className="textMenu textShadow">About</p>
         </Button>
         <Button onClick={() => handleClose(props.divRef.about)}>
-          <p  className="textMenu textShadow">The Characters</p>
+          <p  className="textMenu textShadow">Characters</p>
         </Button>
         <Button onClick={() => props.handleOpen()}>
-          <p  className="textMenu textShadow">About Us</p>
+          <p  className="textMenu textShadow">Background</p>
         </Button>
+        </div>
+        <Button onClick={() => handleClose(props.divRef.contact)}>
+          <p  className="textMenu textShadow">Pre Order!</p>
+        </Button>
+        
       </div>
 
       <Menu
@@ -59,13 +66,16 @@ const App = (props) => {
         onClose={handleClose}
       >
         <MenuItem onClick={() => handleClose(props.divRef.promo)}>
-          The Calling
+          <p  className="textShadow textMobileMenu">The Calling</p>
         </MenuItem>
         <MenuItem onClick={() => handleClose(props.divRef.about)}>
-          The Characters
+          <p  className="textShadow textMobileMenu">The Characters</p>
         </MenuItem>
         <MenuItem onClick={() => props.handleOpen()}>
-          About Us
+          <p  className="textShadow textMobileMenu">About Us</p>
+        </MenuItem>
+        <MenuItem onClick={() => handleClose(props.divRef.contact)}>
+          <p  className="textShadow textMobileMenu">Pre Order!</p>
         </MenuItem>
       </Menu>
     </div>

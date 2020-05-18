@@ -3,13 +3,21 @@ import '../App.css';
 import Contact from './Contact';
 
 import xerxes from '../imgs/gold.png';
-import background from '../imgs/biobg.png';
+import background from '../imgs/bg/bio.png';
 
 function App() {
   return (
-    <div className="flexRow appBg" style={{ paddingTop: '50px' }}>
+    <div className="flexRow" 
+      style={{
+        backgroundImage: `url("${background}")`,
+        backgroundSize: 'cover',
+        width: '100%',
+        height: '100%',
+        paddingTop:'170px',
+        backgroundRepeat: 'no-repeat',
+      }}>
       <div style={{ flex: 1 }} className="flexCol">
-        <p className="title  textShadow">Background Story</p>
+        <p className="title  textShadow" style={{marginBottom:5}} >Background Story</p>
         <p>
           I want a game that reminds me of the Bible and the sagas epics and
           adventures that we have there A lot of times when I think of the Bible
