@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useLayoutEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -61,10 +61,32 @@ function App() {
     bio: useRef(null),
     contact: useRef(null),
   };
+  
+  const [menuVis, setMenuVis] = useState(0)
+  const [scrollPosition, setSrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setSrollPosition(position);
+    // console.log('scrolled to '+position)
+    if(position > 800 && menuVis==0){
+      setMenuVis(1)
+    } 
+    if(position < 800){
+      setMenuVis(0)
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+        window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="app">
-      <Menu handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
+      <Menu visibility={menuVis} handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
       
         <Promo divRef={divRef} scrollToRef={scrollToRef} />
         <span ref={divRef.promo}></span>
