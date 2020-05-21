@@ -40,6 +40,20 @@ const scrollToRef = (ref) => {
   }
 };
 
+
+var scrollPos = window.pageYOffset;
+console.log(scrollPos)
+window.onscroll = function() {
+  scrollPos = window.pageYOffset;
+  console.log(scrollPos)
+  if (scrollPos > 800) {
+    document.getElementById("navbar").style.opacity = "1";
+  } else {
+    document.getElementById("navbar").style.opacity = "0";
+  }
+  // prevScrollpos = currentScrollPos;
+} 
+
 function App() {
 
   const [open, setOpen] = React.useState(false);
@@ -51,58 +65,17 @@ function App() {
     // setBioContainer("bioContainer")
   };
 
-  const handleClose = () => {
-    // setOpen(false);
-    // setBioContainer("")
-  };
-
   const divRef = {
     about: useRef(null),
     promo: useRef(null),
     bio: useRef(null),
     contact: useRef(null),
   };
-  
-  const [menuVis, setMenuVis] = useState(0)
-  const [scrollPosition, setSrollPosition] = useState(0);
-  let lock = 0
-  
-  const handleScroll = () => {
-    // setScrollPosition(position);
-    // console.log('scrolled to '+position)
-    // if(!lock){
-      const position = window.pageYOffset;
-      if(position > 100+ lock || position < lock - 100){
-        lock = position
-        if(position > 800 && position < 850){
-        console.log('lock'+lock+" menu"+menuVis)
-          // setMenuVis(1)
-        }else{
-          // setMenuVis(0)
-        }
-      }
-    //   lock = true
-    //   setTimeout(()=>{lock = false;console.log('locked')},100)
-      // if(position > 800){
-      //   setMenuVis(1)
-      // } else{
-      //   setMenuVis(0)
-      // }
-    // }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: false });
-
-    return () => {
-        window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <div className="app">
-      <Menu visibility={menuVis} key={menuVis} handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
       
+      <Menu handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
         <Promo divRef={divRef} scrollToRef={scrollToRef} />
         <span ref={divRef.promo}></span>
 

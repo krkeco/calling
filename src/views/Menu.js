@@ -19,20 +19,11 @@ const App = (props) => {
     setAnchorEl(null);
     props.scrollToRef(ref);
   };
-  const hid = props.visibility > 0 ?  '100%' : 0
+  // const hid = props.visibility > 0 ?  '100%' : 0
   return (
     <div
-      className="menu"
-      style={{
-        opacity: props.visibility,
-        position: 'fixed',
-        width:'100%',
-        height: hid,
-        overflow:'hidden',
-        top: 0,
-        left: 0,
-      }}
-    >
+      id="navbar"
+      className="menu">
         <div className="mobileMenu">
       <Button
         style={{color:'white'}}
