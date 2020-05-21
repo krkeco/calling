@@ -13,6 +13,7 @@ import Contact from './views/Contact';
 import Story from './views/Story';
 import Indiegogo from './views/Indiegogo';
 
+import storyJSON from './views/stories.json';
 
 import xerxes from './imgs/babylon/xerxes.png';
 
@@ -64,20 +65,34 @@ function App() {
   
   const [menuVis, setMenuVis] = useState(0)
   const [scrollPosition, setSrollPosition] = useState(0);
+  let lock = 0
+  
   const handleScroll = () => {
-    const position = window.pageYOffset;
-    setSrollPosition(position);
+    // setScrollPosition(position);
     // console.log('scrolled to '+position)
-    if(position > 800 && menuVis==0){
-      setMenuVis(1)
-    } 
-    if(position < 800){
-      setMenuVis(0)
-    }
+    // if(!lock){
+      const position = window.pageYOffset;
+      if(position > 100+ lock || position < lock - 100){
+        lock = position
+        if(position > 800 && position < 850){
+        console.log('lock'+lock+" menu"+menuVis)
+          // setMenuVis(1)
+        }else{
+          // setMenuVis(0)
+        }
+      }
+    //   lock = true
+    //   setTimeout(()=>{lock = false;console.log('locked')},100)
+      // if(position > 800){
+      //   setMenuVis(1)
+      // } else{
+      //   setMenuVis(0)
+      // }
+    // }
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: false });
 
     return () => {
         window.removeEventListener('scroll', handleScroll);
@@ -86,7 +101,7 @@ function App() {
 
   return (
     <div className="app">
-      <Menu visibility={menuVis} handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
+      <Menu visibility={menuVis} key={menuVis} handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
       
         <Promo divRef={divRef} scrollToRef={scrollToRef} />
         <span ref={divRef.promo}></span>
@@ -106,13 +121,13 @@ function App() {
         style={{height:'100%',width:'100%'}}
         >
           <Carousel.Item style={{height:'100%'}} >
-            <Story name="Jonah" loc={storynineveh} character={jonah} />
+            <Story name="Jonah" loc={storynineveh} story={storyJSON.jonah}  character={jonah} />
           </Carousel.Item>
           <Carousel.Item style={{height:'100%'}}>
-            <Story name="Esther" loc={storybabylon} character={esther} />
+            <Story name="Esther" loc={storybabylon} story={storyJSON.esther} character={esther} />
           </Carousel.Item>
           <Carousel.Item style={{height:'100%'}}>
-            <Story name="Joshua" loc={storycanaan} character={joshua} />
+            <Story name="Joshua" loc={storycanaan} story={storyJSON.joshua} character={joshua} />
           </Carousel.Item>
           {/** 
         <Carousel.Item style={{height:'100%'}}>

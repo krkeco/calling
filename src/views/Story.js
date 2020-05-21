@@ -26,12 +26,10 @@ function App(props) {
           style={{
             backgroundImage: `url("${props.loc}")`,
             backgroundSize: 'cover',
-            height:'400px',
-            padding:0,
             backgroundRepeat: 'no-repeat',
           }}>
-          <div className="title  textShadow">{props.name}</div>
-          <p>the story of {props.name}</p>
+          <div className="title textShadow">{props.name}</div>
+          <p className="storyText" >{props.story}</p>
         </div>
       
       </Grid>

@@ -260,8 +260,16 @@ p{
 .storyBg{
   height:900px;
 }
+.storyText{
+  margin-left:150px;
+  margin-right:150px;
+  color:black;
+}
 .storyLoc{
   width:400px;
+  height:400px;
+  padding:0;
+  padding-top:50px;
 }
 .storyImg{
    align-items: center;
