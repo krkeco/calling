@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import Contact from './Contact';
 import Grid from '@material-ui/core/Grid';
-import splash from '../imgs/trifecta.png';
+import splash from '../imgs/about.png';
 import bgImg from '../imgs/bg/mid.png'
 
 function App() {

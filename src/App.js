@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState, useLayoutEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Modal from '@material-ui/core/Modal';
@@ -19,11 +18,13 @@ import xerxes from './imgs/babylon/xerxes.png';
 
 import babylon from './imgs/babylon/location.png';
 
-import storybabylon from './imgs/stories/storybg2.png';
-import storynineveh from './imgs/stories/storybg.png';
-import storycanaan from './imgs/stories/storybg3.png';
+import story1 from './imgs/estherjonah.png';
+import story2 from './imgs/pauljoshua.png';
+import about from './imgs/about.png';
+import promo from './imgs/hero.png';
+import esther from './imgs/estherAbout.png';
+import influence from './imgs/influence.png'
 
-import esther from './imgs/stories/storyEsther.png';
 import jonah from './imgs/stories/storyJonah.png';
 import joshua from './imgs/stories/storyJoshua.png';
 
@@ -43,16 +44,16 @@ const scrollToRef = (ref) => {
 
 var scrollPos = window.pageYOffset;
 console.log(scrollPos)
-window.onscroll = function() {
-  scrollPos = window.pageYOffset;
-  console.log(scrollPos)
-  if (scrollPos > 800) {
-    document.getElementById("navbar").style.opacity = "1";
-  } else {
-    document.getElementById("navbar").style.opacity = "0";
-  }
-  // prevScrollpos = currentScrollPos;
-} 
+// window.onscroll = function() {
+//   scrollPos = window.pageYOffset;
+//   console.log(scrollPos)
+//   if (scrollPos > 800) {
+//     document.getElementById("navbar").style.opacity = "1";
+//   } else {
+//     document.getElementById("navbar").style.opacity = "0";
+//   }
+//   // prevScrollpos = currentScrollPos;
+// } 
 
 function App() {
 
@@ -71,18 +72,52 @@ function App() {
     bio: useRef(null),
     contact: useRef(null),
   };
+        
 
+      // <Promo divRef={divRef} scrollToRef={scrollToRef} />
   return (
     <div className="app">
       
       <Menu handleOpen={handleOpen} scrollToRef={scrollToRef} divRef={divRef} />
-        <Promo divRef={divRef} scrollToRef={scrollToRef} />
-        <span ref={divRef.promo}></span>
+        
 
-        <About />
-        <div ref={divRef.about}></div>
+      <span ref={divRef.promo}></span>
 
+      <div className="title textShadow appTitle">The Calling</div> 
+      <img
+        className="titleIcon"
+        src={influence}
+      />
+      <div style={{
+        backgroundImage: `url("${promo}")`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }}
+      className="comicImg promo">
+        <img className="comicImg promoEsther"  src={esther} />
+    </div>
+
+
+    <span ref={divRef.about}></span>
+    <img className="comicImg about"  src={about} />
+    <img className="comicImg story1"  src={story1} />
+    <img className="comicImg story2"  src={story2} />
    
+     
+          {/** 
+    <span ref={divRef.about}></span>
+      <div style={{
+        backgroundImage: `url("${about}")`,
+        backgroundSize: 'cover',
+        width: '100%',
+        height: 'auto',
+        backgroundRepeat: 'no-repeat',
+      }}>
+      <div>.</div>
+    </div>
+
+
+
         <div style={{
           backgroundImage: `url("${backgroundStory}")`,
           backgroundSize: 'cover',
@@ -102,13 +137,12 @@ function App() {
           <Carousel.Item style={{height:'100%'}}>
             <Story name="Joshua" loc={storycanaan} story={storyJSON.joshua} character={joshua} />
           </Carousel.Item>
-          {/** 
         <Carousel.Item style={{height:'100%'}}>
           <Story offset={storyHide[3]} name="Paul" loc={babylon} character={saul} />
         </Carousel.Item>
-        **/}
         </Carousel>
         </div>
+        **/}
 
         <Indiegogo/>
         <span ref={divRef.contact}></span>

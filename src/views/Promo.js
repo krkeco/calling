@@ -4,7 +4,7 @@ import '../App.css';
 import BR from './BR.js';
 
 import logo from '../logo.svg';
-import splash from '../imgs/bg/hero.png';
+import splash from '../imgs/hero.png';
 
 import saul from '../imgs/saul.png';
 import abigail from '../imgs/abigail.png';
