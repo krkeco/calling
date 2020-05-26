@@ -7,6 +7,39 @@ p{
   color: white;
   font-family: 'Times New Roman';
 }
+
+.app {
+  /*-webkit-transition: background-color 1.5s;
+  transition: background-color 1.5s;*/
+  background-color: #b95;
+  background-image: url('./imgs/bg.png');
+  background-size: cover;
+  text-align: center;
+  padding:0;
+  margin:0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow:hidden;
+}
+.menu {
+  z-index: 100;
+  width:100%;
+  /*background-color: #444;*/
+    /*-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));*/
+  height:40px;
+  transition: opacity .5s, height .25s;
+  
+  opacity: 1;
+  position: fixed;
+  width:100%;
+  overflow:hidden;
+  top: 0;
+  left: 0;
+      
+}
 .title {
   font-family: 'Luminari';
   color: white;
@@ -15,6 +48,7 @@ p{
   margin-top: 40px;
 }
 .titleIcon {
+  margin-top:40px;
   width:200px;
   height:200px;
 }
@@ -26,8 +60,14 @@ p{
   margin-bottom: 40px;
 }
 .bioWrap{
+  position:relative;
+  top:0;
+  left:0;
   padding-top:180px;
   padding-bottom:100px;
+
+  z-index: 99;
+  /*background-color:gray;*/
 }
 .bioScroller{
   overflow:scroll;
@@ -91,39 +131,7 @@ p{
   justify-content: space-between;
   align-items: space-between;
 }
-.appBg{
-  background-color:#cb6;
-}
-.app {
-  /*-webkit-transition: background-color 1.5s;
-  transition: background-color 1.5s;*/
-  background-color: #b95;
-  text-align: center;
-  padding:0;
-  margin:0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow:hidden;
-}
-.menu {
-  z-index: 100;
-  width:100%;
-  /*background-color: #444;*/
-    /*-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));*/
-  height:40px;
-  transition: opacity .5s, height .25s;
-  
-  opacity: 1;
-  position: fixed;
-  width:100%;
-  overflow:hidden;
-  top: 0;
-  left: 0;
-      
-}
+
 .blockText {
   margin-left: 5%;
   margin-right: 5%;
@@ -143,22 +151,35 @@ p{
   width: 100%;
 }
 .comicImg{
+  position:relative;
+  top:0;
+  left:0;
   height: auto;
   width:100%;
-  /*margin-top:0vh;*/
-  /*margin-left:0;*/
   padding:0px;
-  /*background-color:red;*/
-  /*z-index: 99;*/
   transition: height .5s,max-width .5s, margin-top .5s;
 }
 .promo{
   margin-top:-10vw;
- z-index: 3;
+ z-index: 1;
+}
+.aboutText{
+  /*background-color: red;*/
+  width:80%;
+  transform: rotate(-1.5deg);
+  position:relative;
+  color:black;
+  z-index: 5;
+  text-align: left;
+  top:18vw;
+  /*left:12vw;*/
+  /*left: 12vw;*/
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .about{
   margin-top:-15vw;
-  z-index: 2;
+  z-index: 0;
 }
 .story1{
   margin-top:-15vw;
@@ -264,9 +285,21 @@ p{
   color:white;
   transition: text-shadow .5s;
 }
+.indieTitle{
+    transform: rotate(-7deg);
+    font-family: 'Luminari';
+    color: white;
+    /*margin-top:10vw;*/
+    font-size: 60px;
+    font-weight: 200;
+}
+.indieUrls{
+  margin-top:200px;
+  height:300px;
+}
 .indieImg{ 
-  width: 100%;
-  height: 100%; 
+  width: 200px;
+  height: 200px; 
   /*background-color: blue;*/
 }
 .mobileMenu{
@@ -278,42 +311,13 @@ p{
 .gogoContainer{
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 100px;
   width:100%;
+  /*margin-top:-200px;*/
   /*height:600px;*/
 }
-.gogoBg{
-  width: 100%;
-  height: 850px;
-  padding:15px;
-}
-.storyBg{
-  height:900px;
-}
-.storyText{
-  margin-left:150px;
-  margin-right:150px;
-  color:black;
-}
-.storyLoc{
-  width:400px;
-  height:400px;
-  padding:0;
-  padding-top:50px;
-}
-.storyImg{
-   align-items: center;
-}
-.paddless{
-  padding:0;
-  /*margin:0;*/
-}
+
 @media screen and (min-width:960px){
-  .storyImg{
-    align-items: flex-start;
-  }
-  .storyLoc{
-    width:100%;
-  }
   .mobileMenu {
     visibility: hidden;
     height:0px;

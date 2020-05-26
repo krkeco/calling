@@ -8,7 +8,9 @@ function App() {
     <div className="flexRow center ">
       <Subscriptions className="contactIcon clickable" />
       <Facebook className="contactIcon clickable" />
-      <a target="_blank" href="mailto: thecallinglcg@gmail.com"><Email className="contactIcon clickable" /></a>
+      <a target="_blank" href="mailto: thecallinglcg@gmail.com">
+        <Email className="contactIcon clickable" />
+      </a>
     </div>
   );
 }

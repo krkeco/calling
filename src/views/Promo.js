@@ -15,12 +15,12 @@ import agag from '../imgs/agag.png';
 import esther from '../imgs/babylon/esther.png';
 
 function App(props) {
-      // <div className="promoTitle textShadow">
-      //   THE CALLING
-      // </div>
+  // <div className="promoTitle textShadow">
+  //   THE CALLING
+  // </div>
   return (
     <div>
-        <img style={{width:'100vw',padding:0,margin:0}} src={splash} />
+      <img style={{ width: '100vw', padding: 0, margin: 0 }} src={splash} />
     </div>
   );
 }
